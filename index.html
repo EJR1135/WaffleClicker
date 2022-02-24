@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html> 
+<body>
+<div class = "eugeBut" id = "eugeBut">
+    <button id = "eugeButton" class = "eugeButton" onClick = eugOnOff();>Eugene Turn on</button>
+</div>
+<h1>
+    <style>
+        body {
+            background-color: linen;
+        }
+        h1 {
+            color: maroon;
+        }
+        .score {
+            color: darkmagenta;
+            font-size: 35px;
+        }
+        .shop {
+            margin-left:900px;
+            background-color: lavender;
+            position: absolute; top: 400px;
+            height: fit-content;
+            width: fit-content;
+        }
+        .header {
+            color: darkblue; 
+            font-size: 29px;
+        }
+        .clicker{
+            margin-left:400px;
+            height: 200px;
+            position: relative; bottom: -50px;
+        }
+        .info{
+            margin-left:900px;
+            font-size:20px;
+            font-family: sans-serif;
+            position: absolute; top: 320px;
+        }
+        .info2 {
+            margin-left:900px;
+            font-size:20px;
+            font-family: sans-serif;
+            position: absolute; top: 340px;
+        }
+        .info3 {
+            margin-left:900px;
+            font-size:20px;
+            font-family: sans-serif;
+            position: absolute; top: 360px;
+        }
+        .cps{
+            margin-left:900px;
+            font-size:20px;
+            font-family: sans-serif;
+            position: absolute; top: 380px;
+        }
+        .artifacts{
+            background-color: lavender;
+            position:relative; top: -150px; 
+            height: fit-content;
+            width: fit-content;
+            color: darkblue; 
+        }
+        .price{
+            margin-left:900px;
+            background-color: lavender;
+            height: fit-content;
+            width: fit-content;
+        }
+        .shopTitle{
+            font-size: 29px;
+        }
+        .p1{
+            font-size:18px;
+            color: black;
+        }
+        .p2{
+            font-size:18px;
+            color: black;
+        }
+        .p3{
+            font-size:18px;
+            color: black;
+        }
+        .p4{
+            font-size:18px;
+            color: black;
+        }
+        .p0{
+            font-size:18px;
+            color: black;
+        }
+        .monkey{
+            margin-left: 900px;
+            position:absolute; top: 0%;
+        }
+        .artifactCollection{
+            background-color: lightgray;
+            width: 1200px;
+            height: 250px;
+           position: absolute; bottom: -200px;
+        }   
+        .art1{
+            background-color: gray;
+            height: 120px;
+            width: 120px;
+        }
+        .art2{
+            background-color: gray;
+            height: 120px;
+            width: 120px;
+            position: absolute; top: 9%; left: 150px;
+        }
+        .art3{
+            background-color: gray;
+            height: 120px;
+            width: 120px;
+            position: absolute; top: 9%; left: 300px;
+        }
+        .art4{
+            background-color: gray;
+            height: 120px;
+            width: 120px;
+            position: absolute; top: 9%; left: 450px;
+        }
+        .art0{
+            background-color: gray;
+            height: 120px;
+            width: 120px;
+            position: absolute; top: 9%; left: 600px;
+        }
+        .cf{
+            position: absolute; top: 630px;
+        }
+        .onOff{
+            position: absolute; top: 630px; left:10px;
+        }
+        .artifactOnOff2{
+            position: absolute; top: 630px; left: 80px;
+        }
+        .text{
+            font-size: 20px;
+        }
+        .eugene{
+            position: absolute; bottom: -400px;
+        }
+        </style>
+    Click Some WAFFLES, Get Some Points
+</h1>
+
+<p class = "score" id = "score">
+    Score:
+</p>
+
+<div class = "monkey" id = "monkey">
+    <img class = "monkeyIMG" id = "monkeyIMG" src="https://clickclick.w3spaces.com/untitled-1/betterMonkey.png?bypass-cache=80324285" height ="200" width="200" />
+</div>
+
+<div class = "info" id = "info">
+    Waffle Upgrades: 1
+</div>
+
+<div class = "info2" id = "info2">
+    Cook Upgrades: 0
+</div>
+
+<div class = "info3" id = "info3">
+    Amount of Cooks: 0
+</div>
+
+<div class = "cps" id = "cps">
+    CPS: 0
+</div>
+
+<div class = "clicker">
+ <button onclick = whenClick();><img src="https://clickclick.w3spaces.com/untitled-1/waffle.png?bypass-cache=66877781" height ="320" width="320" /></button><br>
+</div>
+
+<div class = "artifacts" id = "artifacts">
+    <div id="shopTitle" class = "shopTitle">
+        ARTIFACTS:<br>
+    </div>
+
+    <div id = "a1" class = "a1">
+    <button id = "a1" onclick = halfAll();><img src="https://clickclick.w3spaces.com/untitled-1/halfPrice.png?bypass-cache=66877778" height ="50" width="50" /></button><br>
+    </div>
+
+    <div class = "p1" id = "p1">
+        Price: 300000
+    </div>
+
+    <div id = "a2" class = "a2">
+    <button id = "a2" onclick = transferClicks();><img src="https://clickclick.w3spaces.com/untitled-1/waffleToClicks.png?bypass-cache=66877781" height ="50" width="50"/></button><br> 
+    </div>
+
+    <div class = "p2" id = "p2">
+        Price: 500000000
+    </div>
+
+    <div class = "a3" id = "a3">
+    <button id = "a3" onclick = quadAll();><img src="https://clickclick.w3spaces.com/untitled-1/QuadUpgrade.png?bypass-cache=66877779" height ="50" width="50" /></button><br> 
+    </div>
+
+    <div class = "p3" id = "p3">
+        Price: 1000000000
+    </div>
+
+    <div class = "a4" id = "a4">
+        <button id = "a4" onclick = timeUpgrade2();><img src="https://clickclick.w3spaces.com/untitled-1/TimeUpgrade2.png?bypass-cache=33429349" height ="50" width="50" /></button><br> 
+        </div>
+    
+        <div class = "p4" id = "p4">
+            Price: 250000000
+    </div>
+    
+     <div class = "a0" id = "a0">
+        <button id = "a0" onclick = crackMonkey();><img src="https://clickclick.w3spaces.com/untitled-1/CrackedChimp.png?bypass-cache=32848262" height ="50" width="50" /></button><br> 
+    </div>
+        
+    <div class = "p0" id = "p0">
+        Price: 50000
+    </div>
+</div>
+
+<div  class = "shop">
+<p id = "header" class = "header">
+    Buy Some Stuff ;)<br>
+</p>
+<p class ="i1" id="i1">
+    Price: 15
+</p>
+<button id = "upgradeButton" onclick = UPGRADE();>INCREASE DA WAFFLES</button><br>
+<p class ="i2" id="i2">
+    Price: 250
+    </p>
+<button id = "passiveButton" onclick = timeFunction();>MORE COOKS</button><br> 
+<p class ="i3" id="i3">
+    Price: 750
+    </p>
+<button id = "passiveUpgrade" onclick = timeUpgrade();>MAKE THE COOKS WORK MORE</button><br> 
+<p class ="i4" id="i4">
+    Price: 5000
+    </p>
+<button id = "doubleUpgrade" onclick = doubleUpgrade();>DOUBLE EVERYTHINGGG</button><br> 
+<p class ="i5" id="i5">
+    Price: 15000
+    </p>
+<button id = "stonks" onclick = stonks();>STONKSKSSSKSSSKKSKS</button><br> 
+<p class ="i6" id="i6">
+    Price: 50000
+    </p>
+<button id = "cashMoneyClicks" onclick = cashMoney();>CASH MONEYYYYYY</button><br> 
+<p class ="i7" id="i7">
+    Price: 1000000
+</p>
+<button id = "bringInTheMonkey" onclick = bringInTheMonkey();>WHY IS THERE A MONKEYYY????</button><br>
+<p class ="i8" id="i8">
+    Price: 2250000
+    </p>
+<button id = "cashMoola" onclick = cashMoola();>D-D-D DOUBLEEEEEE</button><br>
+
+</div>
+<button class = "onOff" id = "onOff" onclick = onOff();>Turn On</button>
+<button class = "artifactOnOff2" id = "artifactOnOff2" onclick = artifactOnOff2();>Artifact Turn Off</button>
+
+
+
+<div class = "artifactCollection" id = "artifactCollection">
+    <div class="text">
+    Artifact Museum:
+    </div>
+    <div class = "art1" id = "art1">
+        <img src="https://clickclick.w3spaces.com/untitled-1/halfPrice.png?bypass-cache=66877778"height = "120" width = "120" />
+        Half Prices Of Everything!!!!!!<br>
+        (excluding artifacts)
+        </div>
+
+    <div class = "art2" id = "art2">
+        <img src="https://clickclick.w3spaces.com/untitled-1/waffleToClicks.png?bypass-cache=66877781" height = "120" width = "120"/>
+        All Click Upgrades Go to<br>
+        Passive Upgrades<br>
+        (for my lazy peeps)
+    </div>
+
+    <div class = "art3" id = "art3">
+        <img src="https://clickclick.w3spaces.com/untitled-1/QuadUpgrade.png?bypass-cache=66877779" height = "120" width = "120" />
+        QUADRUPOLE ALL UPGRADES?!?!?!?!?<br>
+        (don't tell the monkey)
+    </div>
+
+    <div class = "art4" id = "art4">
+        <img src="https://clickclick.w3spaces.com/untitled-1/TimeUpgrade2.png?bypass-cache=33429349" height = "120" width = "120" />
+        make them cooks work overtime!<br>
+        10% increase in efficiency<br>
+        (thank Joe)
+    </div>
+
+    <div class = "art0" id = "art0">
+        <img src="https://clickclick.w3spaces.com/untitled-1/CrackedChimp.png?bypass-cache=32848262" height = "120" width = "120" />
+        The monkeys decide your fate.<br>
+        50/50 chance to double click or passive upgrade.<br>
+        (thank Harry)
+    </div>
+</div>
+
+<div class = "eugene" id = "eugene">
+    <img src="https://clickclick.w3spaces.com/untitled-1/Eugene.png?bypass-cache=32848261" height = "120" width = "120" />
+    This is Eugene, Selling Crack<br>
+    <button class = "crackButton" id = "crackButton" onclick = crackedUp();> 
+    <img src="https://clickclick.w3spaces.com/untitled-1/Crack.png?bypass-cache=32852805" height = "60" width = "60" /></button>
+    
+</div>
+
+<script> 
+revealAll();
+var cps = 0;
+var score = 0;
+var clickUpgrade = 1;
+var passiveUpgrade = 0;
+var timeCounter = 0;
+var counter1 = 2;
+var x = 15;
+var y = 250;
+var z = 750;
+var a = 5000;
+var b = 15000;
+var c = 50000;
+var d = 1000000;
+var e = 225000;
+var a0 = 50000;
+var a1 = 300000;
+var a2 = 500000000;
+var a3 = 1000000000;
+var a4 = 250000000;
+var monkeyTracker = 0;
+var onOffCounter = 2;
+var onOffCounter2 = 0;
+var time = 1000;
+var EUG = 1000000000;
+var tr1 = 0;
+
+function whenClick ()   {
+    score = score + clickUpgrade;
+    console.log(score);
+    updateScore();
+    revealAll();
+}
+
+function revealUpgrade(id, threshold){
+    if(score >= threshold) {
+        document.getElementById(id).style.display = "block";
+    }else{
+        document.getElementById(id).style.display = "none";
+    }
+}
+
+function hideUpgrade(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function UPGRADE(){
+    if(tr1==0){
+        clickUpgrade++;
+    } else if (tr1 == 1){
+        passiveUpgrade++;
+}
+    score = score - x;
+    x = Math.pow(x,1.05);
+    revealAll();
+    updateScore();
+  
+}
+
+function timeFunction(){
+    passiveUpgrade++;
+    timeCounter++;
+    setInterval(function() {
+    score=score+passiveUpgrade;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    revealAll();}, time);
+    score = score - y;
+    y = Math.pow(y, 1.15);
+    revealAll();
+    updateScore();
+}
+
+function timeUpgrade(){
+    passiveUpgrade++;
+    score = score - z;
+    z = Math.pow(z, 1.06);;
+    revealAll();
+    updateScore();
+}
+
+function doubleUpgrade(){
+    if(tr1==0){
+        clickUpgrade = clickUpgrade * 2;
+        passiveUpgrade = passiveUpgrade * 2;
+    } else if (tr1==1){
+        clickUpgrade=clickUpgrade+10;
+        passiveUpgrade = passiveUpgrade * 2;
+    }
+    score = score - a;
+    a = Math.pow(a, 1.2);
+    revealAll();
+    updateScore();
+}
+
+function stonks(){
+    passiveUpgrade = passiveUpgrade * 3;
+    score = score - b;
+    b = Math.pow(b, 1.25);
+    revealAll();
+    updateScore();
+}
+
+function updateScore(){
+    score = Math.floor(score);
+    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("info").innerHTML = "Waffle Upgrades: " + clickUpgrade;
+    document.getElementById("info2").innerHTML = "Cook Upgrades: " + passiveUpgrade;
+    document.getElementById("info3").innerHTML = "Amount of Cooks: " + timeCounter;
+    document.getElementById("i1").innerHTML = "Price " + Math.floor(x);
+    document.getElementById("i2").innerHTML = "Price " + Math.floor(y);
+    document.getElementById("i3").innerHTML = "Price " + Math.floor(z);
+    document.getElementById("i4").innerHTML = "Price " + Math.floor(a);
+    document.getElementById("i5").innerHTML = "Price " + Math.floor(b);
+    document.getElementById("i6").innerHTML = "Price " + Math.floor(c);
+    document.getElementById("i7").innerHTML = "Price " + Math.floor(d);
+    document.getElementById("i8").innerHTML = "Price " + Math.floor(e);
+    document.getElementById("p1").innerHTML = "Price " + Math.floor(a1);
+    cps = timeCounter * passiveUpgrade;
+    document.getElementById("cps").innerHTML = "CPS: " + cps;
+}
+
+function cashMoney(){
+    timeCounter = timeCounter+5;
+    for(var i=0;i<5;i++){
+         setInterval(function() {
+        score=score+passiveUpgrade;
+         document.getElementById("score").innerHTML = "Score: " + score;
+         revealAll();}, time);
+    }
+    score = score - c;
+    c = Math.pow(c, 1.25);
+    revealAll();
+    updateScore();
+}
+
+function bringInTheMonkey(){
+    if(tr1==0){
+        clickUpgrade = clickUpgrade * 3;
+    } else if (tr1==1){
+        passiveUpgrade = passiveUpgrade * 3;
+    }
+    score = score - d;
+    d = Math.pow(d, 1.2);;
+    monkeyTracker++;
+    revealMonkey();
+    revealAll();
+    updateScore();
+}
+
+function cashMoola(){
+    for(var i=0;i<timeCounter;i++){
+         setInterval(function() {
+            score=score+passiveUpgrade;
+         document.getElementById("score").innerHTML = "Score: " + score;
+         revealAll();}, time);
+    }
+    timeCounter = timeCounter*2;
+    score = score - e;
+    e = Math.pow(e, 1.2);;
+    revealAll();
+    updateScore();
+}
+
+function halfAll(){
+    a = a/2;
+    b = b/2;
+    c = c/2;
+    d = d/2;
+    e = e/2;
+    x = x/2;
+    y = y/2;
+    z = z/2;
+    score = score - a1;
+    a1 = "x";
+    revealUpgrade("art1", 0);
+    revealAll();
+    updateScore();
+}
+
+function transferClicks(){
+    clickUpgrade = clickUpgrade/2;
+    passiveUpgrade = passiveUpgrade + clickUpgrade;
+    clickUpgrade = 10;
+    score = score - a2;
+    a2 = "x";
+    tr1++;
+    revealUpgrade("art2", 0);
+    revealAll();
+    updateScore();
+}
+
+function quadAll(){
+    if(tr1==0){
+        passiveUpgrade = passiveUpgrade*4;
+        clickUpgrade = clickUpgrade*4;
+    } else if (tr1==1){
+        passiveUpgrade=passiveUpgrade+10;
+        passiveUpgrade = passiveUpgrade*4;
+    }
+    score = score - a3;
+    a3 = "x";
+    revealUpgrade("art3", 0);
+    revealAll();
+    updateScore();
+}
+
+function crackMonkey(){
+    var x = Math.floor(Math.random() * 2);
+    if(x==1){
+        if(tr1==0){
+        clickUpgrade = clickUpgrade * 2;
+         } else if (tr1==1){
+        passiveUpgrade = passiveUpgrade * 2;
+    }
+    }else{
+    passiveUpgrade = passiveUpgrade*2;
+    score = score - a0;
+    a0 = "x";
+    document.getElementById("monkeyIMG").src = "https://clickclick.w3spaces.com/untitled-1/CrackedChimp.png?bypass-cache=32848262";
+    revealUpgrade("art0", 0);
+    revealAll();
+    updateScore();
+}
+}
+
+function coinFlip(){
+    var x = Math.floor(Math.random() * 2);
+    if(x==1){
+    score = score*2;
+    revealAll();
+    updateScore();
+    alert("you win");
+    }else{
+    score = 0;
+    revealAll();
+    updateScore();
+    alert("you lose");
+    }
+}
+
+function onOff(){
+    if(onOffCounter%2==0){
+        revealUpgrade("artifactCollection", 0);
+        document.getElementById("onOff").innerHTML = "Turn Off";
+    } else if(onOffCounter%2!=0){
+        hideUpgrade("artifactCollection");
+        document.getElementById("onOff").innerHTML = "Turn On";
+    }
+    onOffCounter++;
+}
+
+function artifactOnOff2(){
+    onOffCounter2++;
+    if(onOffCounter2%2==0){
+        revealUpgrade("artifacts", 0);
+        document.getElementById("artifactOnOff2").innerHTML = "Artifact Turn Off";
+    } else if(onOffCounter2%2!=0){
+        hideUpgrade("artifacts");
+        document.getElementById("artifactOnOff2").innerHTML = "Artifact Turn On";
+    }
+}
+
+function eugOnOff(){
+    if(counter1%2==0){
+        revealUpgrade("eugene", 0);
+        document.getElementById("eugeButton").innerHTML = "Eugene Turn Off";
+    } else if(counter1%2!=0){
+        hideUpgrade("eugene");
+        document.getElementById("eugeButton").innerHTML = "Eugene Turn On";
+    }
+    counter1++;
+}
+
+function timeUpgrade2(){
+    time = time-200;
+    score=score-a4;
+    a4 = "x";
+    revealUpgrade("art4", 0);
+    updateScore();
+    revealAll();
+}
+
+function crackedUp(){
+    time = time - 100;
+    score = 0;
+    EUG = "x";
+    hideUpgrade("eugene");
+    updateScore();
+    revealAll();
+}
+
+function revealMonkey(){
+    revealUpgrade("monkey", 0);
+}
+
+function revealAll(){
+    revealUpgrade("stonks", b);
+    revealUpgrade("doubleUpgrade", a);
+    revealUpgrade("passiveUpgrade", z);
+    revealUpgrade("upgradeButton", x);
+    revealUpgrade("passiveButton", y);
+    revealUpgrade("cashMoneyClicks", c);
+    revealUpgrade("bringInTheMonkey", d);
+    revealUpgrade("cashMoola", e);
+    revealUpgrade("a1", a1);
+    revealUpgrade("a2", a2);
+    revealUpgrade("a3", a3);
+    revealUpgrade("a4", a4);
+    revealUpgrade("a0", a0);
+    revealUpgrade("i1", x);
+    revealUpgrade("i2", y);
+    revealUpgrade("i3", z);
+    revealUpgrade("i4", a);
+    revealUpgrade("i5", b);
+    revealUpgrade("i6", c);
+    revealUpgrade("i7", d);
+    revealUpgrade("i8", e);
+    revealUpgrade("p0", a0);
+    revealUpgrade("p1", a1);
+    revealUpgrade("p2", a2);
+    revealUpgrade("p3", a3);
+    revealUpgrade("p4", a4);
+    revealUpgrade("eugeBut", EUG);
+}
+
+hideUpgrade("upgradeButton");
+hideUpgrade("passiveButton");
+hideUpgrade("passiveUpgrade");
+hideUpgrade("doubleUpgrade");
+hideUpgrade("cashMoneyClicks");
+hideUpgrade("stonks");
+hideUpgrade("bringInTheMonkey");
+hideUpgrade("cashMoola");
+hideUpgrade("a0");
+hideUpgrade("a1");
+hideUpgrade("a2");
+hideUpgrade("a3");
+hideUpgrade("a4");
+hideUpgrade("i1");
+hideUpgrade("i2");
+hideUpgrade("i3");
+hideUpgrade("i4");
+hideUpgrade("i5");
+hideUpgrade("i6");
+hideUpgrade("i7");
+hideUpgrade("i8");
+hideUpgrade("p0");
+hideUpgrade("p1");
+hideUpgrade("p2");
+hideUpgrade("p3");
+hideUpgrade("p4");
+hideUpgrade("monkey");
+hideUpgrade("art0");
+hideUpgrade("art1");
+hideUpgrade("art2");
+hideUpgrade("art3");
+hideUpgrade("art4");
+hideUpgrade("artifactCollection");
+hideUpgrade("eugene");
+</script>
+</body>
+</html>
